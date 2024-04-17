@@ -11,17 +11,32 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Text('Home Page'),
-          ElevatedButton(
-              onPressed: () {
-                FirebaseAuth.instance.signOut();
-              },
-              child: Text('Sign Out'))
-        ],
+    return _buildUI();
+  }
+
+  Widget _buildUI() {
+    return SafeArea(
+      child: Padding(
+        padding: EdgeInsets.symmetric(
+          vertical: 10,
+          horizontal: 10,
+        ),
+        child: Scaffold(
+          appBar: AppBar(
+            title: Text("sdfg"),
+          ),
+          body: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text('Home Page'),
+              ElevatedButton(
+                  onPressed: () {
+                    FirebaseAuth.instance.signOut();
+                  },
+                  child: Text('Sign Out'))
+            ],
+          ),
+        ),
       ),
     );
   }

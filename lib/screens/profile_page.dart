@@ -10,6 +10,19 @@ class ProfilePage extends StatefulWidget {
 class _ProfilePageState extends State<ProfilePage> {
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return _buildUI();
+  }
+
+  _buildUI() {
+    return SafeArea(
+      child: Padding(
+        padding: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+        child: Column(
+          children: [
+            Text("profile"),
+          ],
+        ),
+      ),
+    );
   }
 }
