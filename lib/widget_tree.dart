@@ -7,7 +7,7 @@ import 'package:innolympics_sanetech/screens/profile_page.dart';
 import 'package:innolympics_sanetech/screens/submit_reports_page.dart';
 
 class WidgetTree extends StatefulWidget {
-  const WidgetTree({super.key});
+  const WidgetTree({Key? key}) : super(key: key);
 
   @override
   State<WidgetTree> createState() => _WidgetTreeState();
@@ -74,19 +74,14 @@ class _WidgetTreeState extends State<WidgetTree> {
     );
   }
 
-  _buildUI() {
+  Widget _buildUI() {
     return SafeArea(
       child: Padding(
         padding: EdgeInsets.symmetric(
           vertical: 10,
           horizontal: 10,
         ),
-        child: Column(
-          mainAxisSize: MainAxisSize.max,
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [],
-        ),
+        child: bottomNavigationPage[_currentPage],
       ),
     );
   }
