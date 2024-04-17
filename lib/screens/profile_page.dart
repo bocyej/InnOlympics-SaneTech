@@ -9,6 +9,9 @@ class ProfilePage extends StatefulWidget {
 }
 
 class _ProfilePageState extends State<ProfilePage> {
+
+  final user = FirebaseAuth.instance.currentUser!;
+
   @override
   Widget build(BuildContext context) {
     return _buildUI();
@@ -58,7 +61,7 @@ class _ProfilePageState extends State<ProfilePage> {
               ),
             ),
           ),
-          const Column(
+          Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Text(
@@ -73,7 +76,7 @@ class _ProfilePageState extends State<ProfilePage> {
                 height: 8,
               ),
               Text(
-                'emailemailemail',
+                user.email!,
                 style: TextStyle(
                   fontSize: 14,
                   fontWeight: FontWeight.w500,
