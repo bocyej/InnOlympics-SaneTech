@@ -16,21 +16,111 @@ class _ProfilePageState extends State<ProfilePage> {
 
   _buildUI() {
     return SafeArea(
-      child: Padding(
-        padding: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
-        child: Column(
-          children: [
-            Text("profile"),
-            Center(
-              child: ElevatedButton(
-                onPressed: () {
-                  FirebaseAuth.instance.signOut();
-                },
-                child: Text('Sign Out'),
+      child: Scaffold(
+        appBar: AppBar(
+          title: const Text(
+            "Profile",
+            style: TextStyle(
+              fontSize: 20,
+              fontWeight: FontWeight.bold,
+              color: Colors.black,
+            ),
+          ),
+        ),
+        body: _profileInfo(),
+      ),
+    );
+  }
+
+  Widget _profileInfo() {
+    return Padding(
+      padding: const EdgeInsets.symmetric(
+        vertical: 10,
+        horizontal: 10,
+      ),
+      child: Column(
+        mainAxisSize: MainAxisSize.max,
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Container(
+            width: 250,
+            height: 250,
+            decoration: BoxDecoration(
+              borderRadius: const BorderRadius.all(Radius.circular(150)),
+              border: Border.all(
+                width: 2,
+                color: Colors.black45,
+              ),
+              image: const DecorationImage(
+                fit: BoxFit.cover,
+                image: AssetImage('assets/photos/default-icon.png'),
               ),
             ),
-          ],
-        ),
+          ),
+          const Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Text(
+                'namenamename',
+                style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.w600,
+                  color: Colors.black,
+                ),
+              ),
+              SizedBox(
+                height: 8,
+              ),
+              Text(
+                'emailemailemail',
+                style: TextStyle(
+                  fontSize: 14,
+                  fontWeight: FontWeight.w500,
+                  color: Colors.black,
+                ),
+              ),
+            ],
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(
+              vertical: 10,
+            ),
+            child: OutlinedButton(
+              onPressed: () {
+                FirebaseAuth.instance.signOut();
+              },
+              style: ButtonStyle(
+                side: MaterialStateProperty.all(
+                  const BorderSide(color: Colors.black, width: 2),
+                ),
+                shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                  const RoundedRectangleBorder(
+                    borderRadius: BorderRadius.all(
+                      Radius.circular(5),
+                    ),
+                  ),
+                ),
+              ),
+              child: const SizedBox(
+                height: 45,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      "Sign Out",
+                      style: TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.normal,
+                        color: Colors.black,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }
