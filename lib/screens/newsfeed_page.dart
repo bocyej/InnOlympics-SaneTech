@@ -162,6 +162,9 @@ class _NewsfeedPageState extends State<NewsfeedPage> {
 
   Widget _endDrawerInfo() {
     return Drawer(
+      shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.zero,
+      ),
       child: Padding(
         padding: const EdgeInsets.all(25),
         child: ListView(
