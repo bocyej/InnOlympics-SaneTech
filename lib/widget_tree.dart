@@ -43,12 +43,12 @@ class _WidgetTreeState extends State<WidgetTree> {
           BottomNavigationBarItem(
             icon: Icon(CupertinoIcons.calendar),
             activeIcon: Icon(CupertinoIcons.calendar_today),
-            label: 'Schedule',
+            label: 'Reports',
           ),
           BottomNavigationBarItem(
             icon: Icon(CupertinoIcons.phone),
             activeIcon: Icon(CupertinoIcons.phone_solid),
-            label: 'Inbox',
+            label: 'Hotlines',
           ),
           BottomNavigationBarItem(
             icon: Icon(CupertinoIcons.person_circle),
