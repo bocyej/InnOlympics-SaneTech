@@ -65,7 +65,7 @@ class _ProfilePageState extends State<ProfilePage> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Text(
-                'namenamename',
+                'John Doe',
                 style: TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.w600,
@@ -76,7 +76,7 @@ class _ProfilePageState extends State<ProfilePage> {
                 height: 8,
               ),
               Text(
-                user.email!,
+                'test@gmail.com',
                 style: TextStyle(
                   fontSize: 14,
                   fontWeight: FontWeight.w500,

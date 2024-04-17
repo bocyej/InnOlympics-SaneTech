@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:innolympics_sanetech/models/report_card_model.dart';
+import 'package:innolympics_sanetech/screens/review_reports.dart';
 
 class SubmitReportsPage extends StatefulWidget {
   const SubmitReportsPage({super.key});
@@ -34,13 +35,32 @@ class _SubmitReportsPageState extends State<SubmitReportsPage> {
         resizeToAvoidBottomInset: false,
         appBar: AppBar(
           title: const Text(
-            "Report",
+            "Reports",
             style: TextStyle(
               fontSize: 20,
               fontWeight: FontWeight.bold,
               color: Colors.black,
             ),
           ),
+          actions: [
+            MaterialButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const ReviewReportsPage()),
+                );
+              },
+              child: const Text(
+                "View Reports",
+                style: TextStyle(
+                  fontSize: 13,
+                  fontWeight: FontWeight.normal,
+                  color: Colors.black,
+                ),
+              ),
+            )
+          ],
         ),
         body: _submitReportInfo(),
       ),
@@ -48,51 +68,16 @@ class _SubmitReportsPageState extends State<SubmitReportsPage> {
   }
 
   Widget _submitReportInfo() {
-    return Padding(
+    return const Padding(
       padding: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
       child: Column(
         children: [
-          DefaultTabController(
-            length: 2, // length of tabs
-            initialIndex: 0,
-            child: Column(
-              children: <Widget>[
-                Container(
-                  child: const TabBar(
-                    labelColor: Colors.black,
-                    unselectedLabelColor: Colors.black26,
-                    tabs: [
-                      Tab(
-                        child: Text(
-                          'Submit Reports',
-                          style: TextStyle(fontSize: 17),
-                        ),
-                      ),
-                      Tab(
-                        child: Text(
-                          'View Reports',
-                          style: TextStyle(fontSize: 17),
-                        ),
-                      ),
-                    ],
-                    indicatorColor: Colors.black,
-                  ),
-                ),
-                Container(
-                  height: MediaQuery.sizeOf(context).height * 0.65,
-                  decoration: const BoxDecoration(
-                    border: Border(
-                      top: BorderSide(color: Colors.grey, width: 1.0),
-                    ),
-                  ),
-                  child: TabBarView(
-                    children: <Widget>[
-                      _tabOneInfo(),
-                      _tabTwoInfo(),
-                    ],
-                  ),
-                ),
-              ],
+          Text(
+            "data",
+            style: TextStyle(
+              fontSize: 20,
+              fontWeight: FontWeight.bold,
+              color: Colors.black,
             ),
           ),
         ],
