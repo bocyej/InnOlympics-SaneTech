@@ -11,8 +11,10 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-
-
+  
+  google_maps_flutter: ^2.6.0
+  location: ^6.0.1
+  flutter_polyline_points: ^2.0.0
   cupertino_icons: ^1.0.6
   firebase_core: ^2.27.0
   firebase_auth: ^4.17.8
