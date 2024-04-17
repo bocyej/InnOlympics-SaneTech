@@ -1,5 +1,6 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:innolympics_sanetech/Authentication/auth_page.dart';
 import 'package:innolympics_sanetech/firebase_options.dart';
 import 'package:innolympics_sanetech/widget_tree.dart';
@@ -24,6 +25,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.blueGrey.shade900),
         useMaterial3: true,
+        textTheme: GoogleFonts.montserratTextTheme(),
       ),
       home: AuthPage(),
     );
