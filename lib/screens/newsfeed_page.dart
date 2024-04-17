@@ -80,7 +80,7 @@ class _NewsfeedPageState extends State<NewsfeedPage> {
                       Padding(
                         padding: const EdgeInsets.symmetric(vertical: 8),
                         child: Container(
-                          width: MediaQuery.sizeOf(context).width * 0.85,
+                          width: MediaQuery.sizeOf(context).width,
                           height: MediaQuery.sizeOf(context).height * 0.25,
                           decoration: BoxDecoration(
                             borderRadius:

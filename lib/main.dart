@@ -28,6 +28,7 @@ class MyApp extends StatelessWidget {
         textTheme: GoogleFonts.montserratTextTheme(),
       ),
       home: AuthPage(),
+      debugShowCheckedModeBanner: false,
     );
   }
 }
