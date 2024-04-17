@@ -7,7 +7,7 @@ import 'package:innolympics_sanetech/screens/profile_page.dart';
 import 'package:innolympics_sanetech/screens/submit_reports_page.dart';
 
 class WidgetTree extends StatefulWidget {
-  const WidgetTree({Key? key}) : super(key: key);
+  const WidgetTree({super.key});
 
   @override
   State<WidgetTree> createState() => _WidgetTreeState();
@@ -74,7 +74,7 @@ class _WidgetTreeState extends State<WidgetTree> {
     );
   }
 
-  Widget _buildUI() {
+  _buildUI() {
     return SafeArea(
       child: Padding(
         padding: EdgeInsets.symmetric(

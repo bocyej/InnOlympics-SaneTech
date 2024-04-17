@@ -11,19 +11,26 @@ class ProfilePage extends StatefulWidget {
 class _ProfilePageState extends State<ProfilePage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Center(
-            child: ElevatedButton(
-              onPressed: () {
-                FirebaseAuth.instance.signOut();
-              },
-              child: Text('Sign Out'),
+    return _buildUI();
+  }
+
+  _buildUI() {
+    return SafeArea(
+      child: Padding(
+        padding: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+        child: Column(
+          children: [
+            Text("profile"),
+            Center(
+              child: ElevatedButton(
+                onPressed: () {
+                  FirebaseAuth.instance.signOut();
+                },
+                child: Text('Sign Out'),
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

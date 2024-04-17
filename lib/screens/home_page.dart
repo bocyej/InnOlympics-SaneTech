@@ -11,12 +11,27 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Center(child: Text('Map')),
-        ],
+    return _buildUI();
+  }
+
+  Widget _buildUI() {
+    return SafeArea(
+      child: Padding(
+        padding: EdgeInsets.symmetric(
+          vertical: 10,
+          horizontal: 10,
+        ),
+        child: Scaffold(
+          appBar: AppBar(
+            title: Text("sdfg"),
+          ),
+          body: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Center(child: Text('Maps')),
+            ],
+          ),
+        ),
       ),
     );
   }

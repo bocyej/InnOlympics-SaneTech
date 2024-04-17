@@ -10,6 +10,19 @@ class SubmitReportsPage extends StatefulWidget {
 class _SubmitReportsPageState extends State<SubmitReportsPage> {
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return _buildUI();
+  }
+
+  _buildUI() {
+    return SafeArea(
+      child: Padding(
+        padding: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+        child: Column(
+          children: [
+            Text("submit reports"),
+          ],
+        ),
+      ),
+    );
   }
 }
