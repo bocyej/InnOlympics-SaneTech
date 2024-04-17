@@ -9,10 +9,17 @@ class SubmitReportsPage extends StatefulWidget {
 }
 
 class _SubmitReportsPageState extends State<SubmitReportsPage> {
+  TextEditingController _incidentController = TextEditingController();
+  TextEditingController _descriptionController = TextEditingController();
+  DateTime? incidentDate;
   List<ReportCardModel> reportscard = [];
 
   void _getInitialInfo() {
     reportscard = ReportCardModel.getReports();
+  }
+
+  void submitReport() async {
+    
   }
 
   @override
@@ -24,6 +31,7 @@ class _SubmitReportsPageState extends State<SubmitReportsPage> {
     _getInitialInfo();
     return SafeArea(
       child: Scaffold(
+        resizeToAvoidBottomInset: false,
         appBar: AppBar(
           title: const Text(
             "Report",
@@ -94,11 +102,152 @@ class _SubmitReportsPageState extends State<SubmitReportsPage> {
 
   SingleChildScrollView _tabOneInfo() {
     return SingleChildScrollView(
-      child: Column(
-        mainAxisSize: MainAxisSize.max,
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [],
+      child: SafeArea(
+        child: Column(
+          mainAxisSize: MainAxisSize.max,
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            SizedBox(height: 15),
+            TextField(
+              decoration: InputDecoration(
+                labelText: 'Incident',
+                enabledBorder: OutlineInputBorder(
+                  borderSide: BorderSide(color: Colors.blueGrey.shade900),
+                ),
+                focusedBorder: OutlineInputBorder(
+                  borderSide: BorderSide(color: Colors.blueGrey.shade900),
+                ),
+              ),
+            ),
+            SizedBox(height: 15),
+            TextField(
+              decoration: InputDecoration(
+                labelText: 'Short Description',
+                enabledBorder: OutlineInputBorder(
+                  borderSide: BorderSide(color: Colors.blueGrey.shade900),
+                ),
+                focusedBorder: OutlineInputBorder(
+                  borderSide: BorderSide(color: Colors.blueGrey.shade900),
+                ),
+              ),
+            ),
+            SizedBox(height: 15),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 0.0),
+              child: Row(
+                children: [
+                  Expanded(
+                    child: Divider(
+                      thickness: 2,
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                    child: Text(
+                      'Media',
+                      style: TextStyle(color: Colors.blueGrey[900]),
+                    ),
+                  ),
+                  Expanded(
+                    child: Divider(
+                      thickness: 2,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            SizedBox(height: 15),
+            Row(
+              children: [
+                Container(
+                  height: 100,
+                  width: 195,
+                  padding: EdgeInsets.all(20),
+                  decoration: BoxDecoration(
+                      border: Border.all(),
+                      borderRadius: BorderRadius.circular(5)),
+                  child: Center(
+                    child: Text('Image'),
+                  ),
+                ),
+                Spacer(),
+                Container(
+                  height: 100,
+                  width: 195,
+                  padding: EdgeInsets.all(20),
+                  decoration: BoxDecoration(
+                      border: Border.all(),
+                      borderRadius: BorderRadius.circular(5)),
+                  child: Center(
+                    child: Text('Video'),
+                  ),
+                ),
+              ],
+            ),
+            SizedBox(height: 15),
+            Divider(
+              thickness: 2.0,
+            ),
+            SizedBox(height: 15),
+            Container(
+              padding: EdgeInsets.all(20),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(5),
+                border: Border.all(
+                  width: 1.0,
+                ),
+              ),
+              child: Center(
+                child: Text(
+                  'Location',
+                  style: TextStyle(
+                    fontSize: 14,
+                  ),
+                ),
+              ),
+            ),
+            SizedBox(height: 15),
+            Container(
+              padding: EdgeInsets.all(20),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(5),
+                border: Border.all(
+                  width: 1.0,
+                ),
+              ),
+              child: Center(
+                child: Text(
+                  'Incident Date',
+                  style: TextStyle(
+                    fontSize: 14,
+                  ),
+                ),
+              ),
+            ),
+            SizedBox(height: 15),
+            GestureDetector(
+              onTap: submitReport,
+              child: Container(
+                padding: EdgeInsets.all(20),
+                decoration: BoxDecoration(
+                  color: Colors.blueGrey[900],
+                  borderRadius: BorderRadius.circular(5),
+                ),
+                child: Center(
+                  child: Text(
+                    'SUBMIT',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 16,
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
