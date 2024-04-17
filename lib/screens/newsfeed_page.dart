@@ -68,6 +68,9 @@ class _NewsfeedPageState extends State<NewsfeedPage> {
               Container(
                 decoration: BoxDecoration(
                   border: Border.all(color: Colors.black38),
+                  borderRadius: const BorderRadius.all(
+                    Radius.circular(12),
+                  ),
                 ),
                 child: Padding(
                   padding: const EdgeInsets.all(10),
@@ -81,9 +84,9 @@ class _NewsfeedPageState extends State<NewsfeedPage> {
                           height: MediaQuery.sizeOf(context).height * 0.25,
                           decoration: BoxDecoration(
                             borderRadius:
-                                const BorderRadius.all(Radius.circular(10)),
+                                const BorderRadius.all(Radius.circular(8)),
                             border: Border.all(
-                              width: 2,
+                              width: 1,
                               color: Colors.black38,
                             ),
                             image: DecorationImage(
