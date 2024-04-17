@@ -28,12 +28,7 @@ class _HomePageState extends State<HomePage> {
           body: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text('Home Page'),
-              ElevatedButton(
-                  onPressed: () {
-                    FirebaseAuth.instance.signOut();
-                  },
-                  child: Text('Sign Out'))
+              Center(child: Text('Maps')),
             ],
           ),
         ),
