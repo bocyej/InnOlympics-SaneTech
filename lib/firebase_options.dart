@@ -83,4 +83,5 @@ class DefaultFirebaseOptions {
     authDomain: 'innolympics-sanetech.firebaseapp.com',
     storageBucket: 'innolympics-sanetech.appspot.com',
   );
+
 }
