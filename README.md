@@ -1,7 +1,5 @@
 # innolympics_sanetech
 
-A new Flutter project.
-
 ## Getting Started
 
 INGAT Flutter Project
