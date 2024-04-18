@@ -1,11 +1,10 @@
 # innolympics_sanetech
 
-## Getting Started
 
 INGAT Flutter Project
 
 Introduction
-Welcome to the INGAT Flutter project! This project aims to revolutionize community safety by providing crime data and safety alerts through a user-friendly mobile application.
+Welcome to the INGAT Flutter project! This project aims to revolutionize community safety by providing crime data location and date and safety alerts through a user-friendly mobile application.
 
 Getting Started
 Install Flutter: Make sure you have Flutter installed on your computer. You can download it from here.
