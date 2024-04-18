@@ -22,6 +22,7 @@ class _AuthPageState extends State<AuthPage> {
             print('Navigating to HomePage');
             return WidgetTree();
           } else {
+            print('Navigating to LoginPage');
             return LoginPage();
           }
         },

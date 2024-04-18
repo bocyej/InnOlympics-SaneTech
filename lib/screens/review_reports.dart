@@ -1,18 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:innolympics_sanetech/models/report_card_model.dart';
-import 'package:innolympics_sanetech/screens/review_reports.dart';
 
-class SubmitReportsPage extends StatefulWidget {
-  const SubmitReportsPage({super.key});
+class ReviewReportsPage extends StatefulWidget {
+  const ReviewReportsPage({super.key});
 
   @override
-  State<SubmitReportsPage> createState() => _SubmitReportsPageState();
+  State<ReviewReportsPage> createState() => _ReviewReportsPageState();
 }
 
-class _SubmitReportsPageState extends State<SubmitReportsPage> {
-  TextEditingController _incidentController = TextEditingController();
-  TextEditingController _descriptionController = TextEditingController();
-  DateTime? incidentDate;
+class _ReviewReportsPageState extends State<ReviewReportsPage> {
   List<ReportCardModel> reportscard = [];
 
   void _getInitialInfo() {
@@ -28,56 +24,71 @@ class _SubmitReportsPageState extends State<SubmitReportsPage> {
     return _buildUI();
   }
 
-  _buildUI() {
+  Widget _buildUI() {
     _getInitialInfo();
     return SafeArea(
       child: Scaffold(
-        resizeToAvoidBottomInset: false,
         appBar: AppBar(
           title: const Text(
-            "Reports",
+            "View Reports",
             style: TextStyle(
               fontSize: 20,
               fontWeight: FontWeight.bold,
               color: Colors.black,
             ),
           ),
-          actions: [
-            MaterialButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => const ReviewReportsPage()),
-                );
-              },
-              child: const Text(
-                "View Reports",
-                style: TextStyle(
-                  fontSize: 13,
-                  fontWeight: FontWeight.normal,
-                  color: Colors.black,
-                ),
-              ),
-            )
-          ],
         ),
-        body: _submitReportInfo(),
+        body: _reviewReportsInfo(),
       ),
     );
   }
 
-  Widget _submitReportInfo() {
-    return const Padding(
+  Widget _reviewReportsInfo() {
+    return Padding(
       padding: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
       child: Column(
         children: [
-          Text(
-            "data",
-            style: TextStyle(
-              fontSize: 20,
-              fontWeight: FontWeight.bold,
-              color: Colors.black,
+          DefaultTabController(
+            length: 2, // length of tabs
+            initialIndex: 0,
+            child: Column(
+              children: <Widget>[
+                Container(
+                  child: const TabBar(
+                    labelColor: Colors.black,
+                    unselectedLabelColor: Colors.black26,
+                    tabs: [
+                      Tab(
+                        child: Text(
+                          'Submit Reports',
+                          style: TextStyle(fontSize: 17),
+                        ),
+                      ),
+                      Tab(
+                        child: Text(
+                          'View Reports',
+                          style: TextStyle(fontSize: 17),
+                        ),
+                      ),
+                    ],
+                    indicatorColor: Colors.black,
+                  ),
+                ),
+                Container(
+                  height: MediaQuery.sizeOf(context).height * 0.65,
+                  decoration: const BoxDecoration(
+                    border: Border(
+                      top: BorderSide(color: Colors.grey, width: 1.0),
+                    ),
+                  ),
+                  child: TabBarView(
+                    children: <Widget>[
+                      _tabOneInfo(),
+                      _tabTwoInfo(),
+                    ],
+                  ),
+                ),
+              ],
             ),
           ),
         ],
@@ -237,7 +248,7 @@ class _SubmitReportsPageState extends State<SubmitReportsPage> {
     );
   }
 
-  SingleChildScrollView _tabTwoInfo() {
+  Widget _tabTwoInfo() {
     return SingleChildScrollView(
       child: Column(
         mainAxisSize: MainAxisSize.max,

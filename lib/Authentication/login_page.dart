@@ -31,7 +31,7 @@ class _LoginPageState extends State<LoginPage> {
         context: context,
         builder: (context) {
           return Center(
-            child: CircularProgressIndicator(color: Colors.deepPurple),
+            child: CircularProgressIndicator(color: Colors.blueGrey[900]),
           );
         },
       );
@@ -118,6 +118,9 @@ class _LoginPageState extends State<LoginPage> {
                       }
                       if (errorMessageFireAuth == 'user-not-found') {
                         return 'User not found';
+                      }
+                      if (errorMessageFireAuth == 'invalid-email') {
+                        return 'Invalid Email Format';
                       }
                       return null;
                     },
