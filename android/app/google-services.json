@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "749319995610",
+    "project_id": "innolympics-sanetech",
+    "storage_bucket": "innolympics-sanetech.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:749319995610:android:328d57491e5e9ff1fee5e3",
+        "android_client_info": {
+          "package_name": "com.example.innolympics_sanetech"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCSHe1aCpb9khbiRPWar7HwfEgJDCszjZE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
